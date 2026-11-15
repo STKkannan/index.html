@@ -59,7 +59,38 @@ h1,h2,h3{font-weight:800}
 .profile-icons a svg{display:block;width:30px;height:30px}
 .profile-icons a:focus-visible{outline:3px solid #0a66c2;outline-offset:3px}
 .hero h1 em{font-style:normal}
-</style></head>
+</style>
+<style>
+/* About section: prevent the biography card from stretching to portrait height */
+#about .about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, .75fr);
+  gap: 25px;
+  align-items: start;
+}
+#about .about > .card {
+  height: auto;
+  min-height: 0;
+  align-self: start;
+}
+#about .portrait {
+  height: 400px;
+  min-height: 0;
+  align-self: start;
+}
+#about .portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+@media (max-width: 850px) {
+  #about .about { grid-template-columns: minmax(0, 1fr); }
+  #about .portrait { height: 400px; }
+}
+</style>
+</head>
 <body>
 <header>
 <nav aria-label="Main navigation" class="wrap nav">
@@ -151,7 +182,8 @@ h1,h2,h3{font-weight:800}
         I am a PhD student and Graduate Research Assistant at South Dakota State University, working in the Plant Pathogen Interaction Lab (Dr. Gazala Ameen). My research integrates genomics, transcriptomics, molecular genetics and bioinformatics to understand crop disease resistance and support resilient crop improvement.
        </p>
 <p style="margin-top:14px">
-        </p>
+        My earlier research spans wheat stress genomics and association mapping, sorghum shoot fly resistance and the characterization of barnyard millet mutants.
+       </p>
 </div>
 <div class="portrait">
 <img alt="Portrait of Thamaraikannan Sivakumar" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="profile.jpg"/>
